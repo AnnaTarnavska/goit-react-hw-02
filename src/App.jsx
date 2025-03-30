@@ -13,11 +13,10 @@ const App = () => {
     });
 
   const updateFeedback = (feedbackType) => {
-    setFeedback((prevState) => {
-      const newFeedback = { ...prevState, [feedbackType]: prevState[feedbackType] + 1 };
-      localStorage.setItem('feedback', JSON.stringify(newFeedback));
-      return newFeedback;
-    });
+    setFeedback((prevState) => ({
+       ...prevState,
+      [feedbackType]: prevState[feedbackType] + 1,
+    }));
   };
 
    const resetFeedback = () => {
@@ -46,4 +45,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
